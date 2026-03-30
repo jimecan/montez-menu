@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Montez Family Mexican Restaurant & Cantina | Since 1963</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #2a2418;
+      font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, 'Roboto', 'Georgia', serif;
+      color: #2c1e12;
+      padding: 2rem 1rem;
+    }
+
+    /* main container */
+    .menu-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      background: #fffaf2;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      border-radius: 2rem;
+      overflow: hidden;
+      border: 1px solid #e0c8a8;
+    }
+
+    /* header section (from scans) */
+    .hero {
+      background: linear-gradient(135deg, #9b2f1f 0%, #7b2a1c 100%);
+      padding: 2rem 2rem 1.5rem;
+      text-align: center;
+      border-bottom: 6px solid #f7c35c;
+    }
+
+    .hero h1 {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+      color: #ffefc0;
+      text-shadow: 3px 3px 0 #5a1e12;
+    }
+
+    .hero .since {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #ffdd99;
+      background: #4f1c10;
+      display: inline-block;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      margin-top: 0.5rem;
+    }
+
+    .subhead {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #fbe8c0;
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    .contact-bar {
+      background: #e9dbc9;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #4a2e1a;
+      border-bottom: 1px solid #dac29c;
+    }
+
+    .contact-bar span {
+      background: #fff2e0;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+    }
+
+    /* menu layout */
+    .menu-content {
+      padding: 2rem 2rem 2.5rem;
+    }
+
+    .section {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px dashed #dbbd8c;
+      padding-bottom: 1.2rem;
+    }
+
+    .section-title {
+      font-size: 1.9rem;
+      font-weight: 800;
+      font-family: 'Georgia', serif;
+      border-left: 8px solid #c2512a;
+      padding-left: 1rem;
+      margin-bottom: 1.5rem;
+      color: #6b2e1a;
+      letter-spacing: -0.3px;
+    }
+
+    .sub-section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 1.5rem 0 1rem;
+      color: #8b3c22;
+      background: #f9efdf;
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+    }
+
+    .grid-2col {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 0.8rem 1.8rem;
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      padding: 0.5rem 0;
+      border-bottom: 1px dotted #eedbc0;
+    }
+
+    .item-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2b2a1e;
+      letter-spacing: -0.2px;
+    }
+
+    .item-price {
+      font-weight: 700;
+      color: #b5512a;
+      font-size: 1rem;
+      background: #fff1e2;
+      padding: 0.1rem 0.6rem;
+      border-radius: 20px;
+    }
+
+    .item-desc {
+      font-size: 0.8rem;
+      color: #6f543a;
+      width: 100%;
+      margin-top: 0.2rem;
+      line-height: 1.3;
+    }
+
+    .note {
+      background: #fff3e3;
+      padding: 0.6rem 1rem;
+      border-radius: 1rem;
+      font-size: 0.8rem;
+      margin: 1rem 0 0.5rem;
+      color: #8b5a2e;
+      font-weight: 500;
+    }
+
+    .disclaimer {
+      font-size: 0.7rem;
+      text-align: center;
+      margin-top: 2rem;
+      color: #896e4b;
+      border-top: 1px solid #e5d0b0;
+      padding-top: 1rem;
+    }
+
+    .kids-box, .specials-box {
+      background: #fef6ea;
+      border-radius: 1.5rem;
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+    }
+
+    .inline-badge {
+      font-size: 0.7rem;
+      background: #d9b48b;
+      color: white;
+      border-radius: 30px;
+      padding: 0.2rem 0.7rem;
+      margin-left: 0.6rem;
+      vertical-align: middle;
+    }
+
+    @media (max-width: 700px) {
+      .menu-content {
+        padding: 1rem;
+      }
+      .section-title {
+        font-size: 1.6rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+
+    footer {
+      background: #e9dbc9;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.8rem;
+      color: #5e3e22;
+      border-top: 1px solid #cfb587;
+    }
+  </style>
+</head>
+<body>
+<div class="menu-container">
+  <div class="hero">
+    <h1>MONTEZ FAMILY</h1>
+    <div class="since">SINCE 1963</div>
+    <div class="subhead">JUAN MONTEZ RESTAURANT & Cantina</div>
+  </div>
+  <div class="contact-bar">
+    <span>📍 453983 E 305 RD, AFTON, OKLAHOMA</span>
+    <span>📞 (918) 219-5109</span>
+    <span>👍 Facebook • Catering & Group Events</span>
+  </div>
+
+  <div class="menu-content">
+    <!-- NINO'S MENU (KIDS) -->
+    <div class="section">
+      <div class="section-title">👦 NINO'S MENU • 12 years & under</div>
+      <div class="kids-box">
+        <p><strong>Mexican meals served with beans and rice</strong> &nbsp; 7.99</p>
+        <div class="grid-2col" style="margin-top: 0.5rem;">
+          <div class="menu-item"><span class="item-name">Taco</span><span class="item-price">7.99</span><div class="item-desc">Fold, flour tortilla</div></div>
+          <div class="menu-item"><span class="item-name">Soft Taco</span><span class="item-price">7.99</span><div class="item-desc">Corn tortilla, chili verde</div></div>
+          <div class="menu-item"><span class="item-name">Burrito</span><span class="item-price">7.99</span></div>
+          <div class="menu-item"><span class="item-name">Enchilada Cheese</span><span class="item-price">7.99</span></div>
+          <div class="menu-item"><span class="item-name">Cheese Quesadilla</span><span class="item-price">7.99</span></div>
+          <div class="menu-item"><span class="item-name">Chicken Nuggets & Fries</span><span class="item-price">8.99</span></div>
+          <div class="menu-item"><span class="item-name">Grilled Cheese & Fries</span><span class="item-price">8.99</span></div>
+          <div class="menu-item"><span class="item-name">Corndog & Fries</span><span class="item-price">8.99</span></div>
+        </div>
+        <div class="note"><strong>Kids 12oz Drink</strong> 2.25 (Refills 2.25) • Coke, Diet Coke, Sprite, Root Beer, Dr. Pepper, Lemonade, Tea<br>
+        <strong>Good 2 Grow Juice & Milk</strong> 4.25: Apple, Fruit Punch, Veggie, Chocolate Milk</div>
+      </div>
+    </div>
+
+    <!-- APPETIZERS / STARTERS from page 4-3 -->
+    <div class="section">
+      <div class="section-title">🌮 APPETIZERS & NACHOS</div>
+      <div class="grid-2col">
+        <div class="menu-item"><span class="item-name">Montez Cheese Dip (tradition)</span><span class="item-price">8.99</span></div>
+        <div class="menu-item"><span class="item-name">Quesadilla (cheese)</span><span class="item-price">10.99</span><div class="item-desc">Chicken or beef +2.00</div></div>
+        <div class="menu-item"><span class="item-name">Fajita Quesadillas</span><span class="item-price">14.99 / 15.99 / 16.99</span><div class="item-desc">Chicken 14.99 | Steak 15.99 | Shrimp 16.99</div></div>
+        <div class="menu-item"><span class="item-name">White Cheese Dip</span><span class="item-price">4.99 / 6.99</span><div class="item-desc">5oz 4.99 | 8oz 6.99 | +Beef/Chorizo +2, +Pico +1.50</div></div>
+        <div class="menu-item"><span class="item-name">Guacamole (in season)</span><span class="item-price">5.99</span></div>
+        <div class="menu-item"><span class="item-name">Bean Dip (with/without jalapeños)</span><span class="item-price">7.99</span></div>
+        <div class="menu-item"><span class="item-name">Nachos (cheese/bean)</span><span class="item-price">7.99</span><div class="item-desc">Chicken or Beef 8.99</div></div>
+        <div class="menu-item"><span class="item-name">Supreme Nachos</span><span class="item-price">14.99</span><div class="item-desc">Beans, beef, cheese, sour cream, bell peppers, tomatoes, olives, jalapenos</div></div>
+        <div class="menu-item"><span class="item-name">Fajitas Nachos (Steak/Chicken)</span><span class="item-price">16.99</span><div class="item-desc">Add shrimp (6pcs) +11.99</div></div>
+        <div class="menu-item"><span class="item-name">Shrimp Fajitas Nachos (12pcs)</span><span class="item-price">24.99</span></div>
+        <div class="menu-item"><span class="item-name">Cheese Fries</span><span class="item-price">6.99</span><div class="item-desc">Add beef 7.75</div></div>
+      </div>
+      <div class="note">✨ All dinners served with beans and rice • Sub Queso +1.00</div>
+    </div>
+
+    <!-- TRADITIONAL PLATES (Juan Plato Supreme through specialties) -->
+    <div class="section">
+      <div class="section-title">🍽️ MONTEZ TRADITIONAL DINNERS</div>
+      <div class="grid-2col">
+        <div class="menu-item"><span class="item-name">Uno (1) Juan Plato Supreme</span><span class="item-price">18.99</span><div class="item-desc">Cheese enchilada, tamale, taco, chili verde, chili relleno</div></div>
+        <div class="menu-item"><span class="item-name">Dos (2) Burrito Dinner (2 choices)</span><span class="item-price">15.99</span><div class="item-desc">Beef, chicken or bean, chili verde sauce & cheese. Sub fajita meat +6</div></div>
+        <div class="menu-item"><span class="item-name">Tres (3) Enchiladas (2 pcs)</span><span class="item-price">15.99</span><div class="item-desc">Chicken, cheese or beef. Sub fajita chicken/steak +6</div></div>
+        <div class="menu-item"><span class="item-name">Cuatro (4) Enchilada & Taco</span><span class="item-price">11.99</span></div>
+        <div class="menu-item"><span class="item-name">Cinco (5) Soft Taco Dinner (2 tacos)</span><span class="item-price">15.99</span><div class="item-desc">Corn tortillas, chili verde sauce. Flour +5.00</div></div>
+        <div class="menu-item"><span class="item-name">Seis (6) Enchilada & Relleno</span><span class="item-price">14.99</span></div>
+        <div class="menu-item"><span class="item-name">Siete (7) South of the Border</span><span class="item-price">17.99</span><div class="item-desc">Two cheese enchiladas + two beef tacos</div></div>
+        <div class="menu-item"><span class="item-name">Ocho (8) Chimichanga Plato</span><span class="item-price">16.99</span><div class="item-desc">Shredded beef or chicken</div></div>
+        <div class="menu-item"><span class="item-name">Nueve (9) Fiesta Fish Plato</span><span class="item-price">16.99</span><div class="item-desc">Two pieces grilled fish, lemon pepper, rice & steamed vegetables</div></div>
+        <div class="menu-item"><span class="item-name">Diez (10) Florentine Chimichanga</span><span class="item-price">16.99</span><div class="item-desc">Spinach & mozzarella, guacamole sauce</div></div>
+      </div>
+    </div>
+
+    <!-- FAJITAS & SPECIALTY DINNERS -->
+    <div class="section">
+      <div class="section-title">🔥 FAJITAS (served with beans, rice & tortillas)</div>
+      <div class="grid-2col">
+        <div class="menu-item"><span class="item-name">Tenderloin Steak Fajita</span><span class="item-price">20.99</span></div>
+        <div class="menu-item"><span class="item-name">Steak & Chicken Fajitas</span><span class="item-price">25.99</span></div>
+        <div class="menu-item"><span class="item-name">Chicken Breast Fajitas</span><span class="item-price">18.99</span></div>
+        <div class="menu-item"><span class="item-name">Shrimp with Chicken or Steak</span><span class="item-price">24.99</span></div>
+        <div class="menu-item"><span class="item-name">Shrimp Fajitas</span><span class="item-price">28.99</span></div>
+        <div class="menu-item"><span class="item-name">Vegetarian Fajitas</span><span class="item-price">9.99</span></div>
+        <div class="menu-item"><span class="item-name">Combo Fajitas (Steak, chicken, shrimp)</span><span class="item-price">32.99</span></div>
+        <div class="menu-item"><span class="item-name">Veggie Fajita (steamed veggies)</span><span class="item-price">16.99</span></div>
+      </div>
+      <div class="sub-section-title">🌶️ SPECIALTY DINNERS</div>
+      <div class="grid-2col">
+        <div class="menu-item"><span class="item-name">Once (11) Seafood Burrito (crabmeat, lobster sauce)</span><span class="item-price">16.99</span></div>
+        <div class="menu-item"><span class="item-name">Docce (12) Hot & Spicy Chili Verde</span><span class="item-price">16.99</span></div>
+        <div class="menu-item"><span class="item-name">Treee (13) Machaca</span><span class="item-price">16.99</span><div class="item-desc">Shredded beef, peppers, tomatoes, onions, egg on request</div></div>
+        <div class="menu-item"><span class="item-name">Catorce (14) New Mexico Enchiladas</span><span class="item-price">17.99</span><div class="item-desc">Layered beef & cheese, topped with egg over easy</div></div>
+        <div class="menu-item"><span class="item-name">Quince (15) Juan's Burrito</span><span class="item-price">17.99</span><div class="item-desc">Spicy shredded beef, green chili, beans, ranchero sauce grilled</div></div>
+        <div class="menu-item"><span class="item-name">Dieciséis (16) Huevos con Chorizo</span><span class="item-price">16.99</span></div>
+        <div class="menu-item"><span class="item-name">De Diecisiete (17) Chili Colorado</span><span class="item-price">17.99</span></div>
+        <div class="menu-item"><span class="item-name">Diceiccho (18) Huevos Rancheros</span><span class="item-price">17.99</span></div>
+        <div class="menu-item"><span class="item-name">Diecinueve (19) Flauta Dinner (3 crispy)</span><span class="item-price">16.99</span></div>
+        <div class="menu-item"><span class="item-name">Veinte (20) Tamale Spread (2x5oz)</span><span class="item-price">17.99</span></div>
+        <div class="menu-item"><span class="item-name">Veintiuno (21) Car "Ney" Asada</span><span class="item-price">19.99</span><div class="item-desc">Ribeye steak, ranchero sauce, guacamole, tortillas</div></div>
+        <div class="menu-item"><span class="item-name">Veintidós (22) Spinach Enchiladas (2)</span><span class="item-price">14.99</span></div>
+        <div class="menu-item"><span class="item-name">Veintitrés (23) Deluxe Santa Fe Chicken</span><span class="item-price">18.99</span></div>
+      </div>
+    </div>
+
+    <!-- SALADS & LIGHTER -->
+    <div class="section">
+      <div class="section-title">🥗 SALADS & LITE BITES</div>
+      <div class="grid-2col">
+        <div class="menu-item"><span class="item-name">Taco Salad Supreme</span><span class="item-price">14.99</span><div class="item-desc">Beef, chicken, beans, lettuce, tomatoes, olives, cheddar shell, guac & sour cream</div></div>
+        <div class="menu-item"><span class="item-name">Montez Lite Salad</span><span class="item-price">11.99</span><div class="item-desc">Diced chicken breast, garden salad, cheddar</div></div>
+        <div class="menu-item"><span class="item-name">Guacamole Salad</span><span class="item-price">11.99</span></div>
+        <div class="menu-item"><span class="item-name">Tossed Salad</span><span class="item-price">4.99</span></div>
+        <div class="menu-item"><span class="item-name">Janet’s Salad (side fajita meat, no cheese)</span><span class="item-price">13.99</span></div>
+      </div>
+    </div>
+
+    <!-- AMERICAN FAVORITES & DINNERS -->
+    <div class="section">
+      <div class="section-title">🍔 AMERICAN FAVORITES & STEAKS</div>
+      <div class="grid-2col">
+        <div class="menu-item"><span class="item-name">Taco Burger</span><span class="item-price">12.99</span></div>
+        <div class="menu-item"><span class="item-name">Char-Grilled Chicken Sandwich (fries)</span><span class="item-price">14.99</span></div>
+        <div class="menu-item"><span class="item-name">Hamburger (fries)</span><span class="item-price">12.99</span><div class="item-desc">Cheese +0.50, Double 16.99</div></div>
+        <div class="menu-item"><span class="item-name">Mom’s Special</span><span class="item-price">15.99</span><div class="item-desc">Mixed veggies, grilled chicken breast, Spanish rice, white queso</div></div>
+        <div class="menu-item"><span class="item-name">Spicy Steak Sandwich</span><span class="item-price">12.99</span></div>
+        <div class="menu-item"><span class="item-name">Taco Plate (3 tacos, beans & rice)</span><span class="item-price">12.99</span></div>
+        <div class="menu-item"><span class="item-name">Tristy Special (rice, fajita chicken/steak, queso)</span><span class="item-price">15.99</span></div>
+        <div class="menu-item"><span class="item-name">Fish Tacos (2) soft tortillas</span><span class="item-price">13.99</span></div>
+        <div class="menu-item"><span class="item-name">Street Tacos (2) grilled fajita, cilantro, onion</span><span class="item-price">10.99</span></div>
+        <div class="menu-item"><span class="item-name">Bistec y Huevos (Steak & Eggs)</span><span class="item-price">13.99</span></div>
+        <div class="menu-item"><span class="item-name">Coctel de Camaron (Shrimp Cocktail)</span><span class="item-price">15.99</span></div>
+      </div>
+      <div class="sub-section-title">🥩 STEAK & SHRIMP DINNERS</div>
+      <div class="grid-2col">
+        <div class="menu-item"><span class="item-name">KC Strip (12oz)</span><span class="item-price">31.99</span></div>
+        <div class="menu-item"><span class="item-name">Ribeye Steak (14oz)</span><span class="item-price">34.99</span></div>
+        <div class="menu-item"><span class="item-name">Salisbury Steak Dinner</span><span class="item-price">16.99</span></div>
+        <div class="menu-item"><span class="item-name">Grilled Shrimp Dinner (12 pcs)</span><span class="item-price">24.99</span></div>
+        <div class="menu-item"><span class="item-name">Jumbo Breaded Shrimp (8 pcs)</span><span class="item-price">18.99</span></div>
+        <div class="menu-item"><span class="item-name">Chicken Strip Dinner</span><span class="item-price">14.99</span></div>
+      </div>
+    </div>
+
+    <!-- LUNCH SPECIALS -->
+    <div class="section">
+      <div class="section-title">☀️ LUNCH SPECIALS (11am-2pm, not Sun)</div>
+      <div class="grid-2col">
+        <div class="menu-item"><span class="item-name">Enchilada (cheese/beef/chicken)</span><span class="item-price">9.99</span></div>
+        <div class="menu-item"><span class="item-name">Chimi (beef or chicken)</span><span class="item-price">9.99</span><div class="item-desc">Ground beef +.75</div></div>
+        <div class="menu-item"><span class="item-name">Taco Lunch</span><span class="item-price">8.99</span></div>
+        <div class="menu-item"><span class="item-name">Flauta (shredded beef or chicken)</span><span class="item-price">10.99</span></div>
+        <div class="menu-item"><span class="item-name">Soft Taco Lunch (corn, verde)</span><span class="item-price">9.99</span></div>
+        <div class="menu-item"><span class="item-name">Relleno</span><span class="item-price">8.99</span></div>
+        <div class="menu-item"><span class="item-name">Spinach Enchilada (queso)</span><span class="item-price">9.49</span></div>
+        <div class="menu-item"><span class="item-name">Burrito (beef/chicken/bean)</span><span class="item-price">8.99</span></div>
+        <div class="menu-item"><span class="item-name">Spicy Beef Burrito Lunch</span><span class="item-price">10.99</span></div>
+        <div class="menu-item"><span class="item-name">Quesadilla Cheese Lunch</span><span class="item-price">9.99</span></div>
+      </div>
+      <div class="note">All lunch orders served with beans & rice • Shredded beef +0.75 • Queso +1.00</div>
+    </div>
+
+    <!-- A LA CARTE & SIDES -->
+    <div class="section">
+      <div class="section-title">🍜 A LA CARTE & SIDE ORDERS</div>
+      <div class="grid-2col">
+        <div class="menu-item"><span class="item-name">Beans / Rice</span><span class="item-price">3.99</span></div>
+        <div class="menu-item"><span class="item-name">Seafood Burrito</span><span class="item-price">12.99</span></div>
+        <div class="menu-item"><span class="item-name">Juan’s Burrito (shredded beef)</span><span class="item-price">11.99</span></div>
+        <div class="menu-item"><span class="item-name">Fajita Burrito (steak, queso)</span><span class="item-price">16.99</span></div>
+        <div class="menu-item"><span class="item-name">Taco / Taco Fold</span><span class="item-price">3.49</span></div>
+        <div class="menu-item"><span class="item-name">Soft Taco (chili verde)</span><span class="item-price">5.99</span></div>
+        <div class="menu-item"><span class="item-name">Cheese Enchilada</span><span class="item-price">3.99</span></div>
+        <div class="menu-item"><span class="item-name">Beef / Chicken / Spinach Enchilada</span><span class="item-price">4.99</span></div>
+        <div class="menu-item"><span class="item-name">Tamale (5oz)</span><span class="item-price">5.99</span></div>
+        <div class="menu-item"><span class="item-name">Flauta / Chili Relleno</span><span class="item-price">3.99</span></div>
+        <div class="menu-item"><span class="item-name">Chimichanga (chicken or beef)</span><span class="item-price">10.99</span></div>
+        <div class="menu-item"><span class="item-name">Burrito Supreme (beef, beans, sour cream)</span><span class="item-price">14.99</span></div>
+        <div class="menu-item"><span class="item-name">Bean Burrito</span><span class="item-price">4.99</span></div>
+        <div class="menu-item"><span class="item-name">Fajita Meat</span><span class="item-price">9.00</span></div>
+        <div class="menu-item"><span class="item-name">Chips & Salsa</span><span class="item-price">6.99</span></div>
+      </div>
+      <div class="sub-section-title">➕ SIDE ORDERS</div>
+      <div class="grid-2col">
+        <div class="menu-item"><span class="item-name">Sour Cream / Olives</span><span class="item-price">0.75</span></div>
+        <div class="menu-item"><span class="item-name">Jalapenos</span><span class="item-price">1.00</span></div>
+        <div class="menu-item"><span class="item-name">Extra Egg</span><span class="item-price">1.49</span></div>
+        <div class="menu-item"><span class="item-name">Cheese / Guacamole</span><span class="item-price">1.25 / 1.99</span></div>
+        <div class="menu-item"><span class="item-name">Pico de Gallo</span><span class="item-price">1.99</span></div>
+        <div class="menu-item"><span class="item-name">French Fries</span><span class="item-price">3.99</span></div>
+        <div class="menu-item"><span class="item-name">Tortillas (flour or corn)</span><span class="item-price">2.99</span></div>
+        <div class="menu-item"><span class="item-name">Chorizo</span><span class="item-price">8.00</span></div>
+        <div class="menu-item"><span class="item-name">Grilled Jalapenos</span><span class="item-price">2.99</span></div>
+      </div>
+    </div>
+
+    <!-- DESSERTS -->
+    <div class="section">
+      <div class="section-title">🍨 DESSERTS</div>
+      <div class="grid-2col">
+        <div class="menu-item"><span class="item-name">Fried Ice Cream (strawberries & whipped cream)</span><span class="item-price">6.99</span></div>
+        <div class="menu-item"><span class="item-name">Sopapilla (cinnamon sugar, honey)</span><span class="item-price">6.99</span></div>
+        <div class="menu-item"><span class="item-name">Fried Cheese Cake Chimi (cinnamon sugar, strawberries)</span><span class="item-price">6.99</span></div>
+      </div>
+    </div>
+
+    <!-- CARRY OUT & EXTRA NOTES -->
+    <div class="section">
+      <div class="section-title">📦 CARRY OUT & PARTY PACKS</div>
+      <div class="grid-2col">
+        <div class="menu-item"><span class="item-name">Chips & Salsa (4oz)</span><span class="item-price">5.99</span><div class="item-desc">12oz 6.99 / 20oz 11.99</div></div>
+        <div class="menu-item"><span class="item-name">Queso & Chips (12oz)</span><span class="item-price">9.99</span><div class="item-desc">20oz 14.99</div></div>
+        <div class="menu-item"><span class="item-name">Montez Dip (12oz)</span><span class="item-price">10.99</span><div class="item-desc">20oz 16.99</div></div>
+      </div>
+      <div class="note"><strong>⚠️ To-Go orders +$3.00 up-charge fee. Shared meals +$3.00 charge.</strong><br>Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase risk of foodborne illness.</div>
+    </div>
+
+    <div class="disclaimer">
+      📍 453983 E 305 RD, AFTON, OKLAHOMA • Call for Pickup, Catering or Group Events (918) 219-5109<br>
+      Prices subject to change. Tax not included. Thank you for choosing Montez Family since 1963.
+    </div>
+  </div>
+  <footer>
+    🌟 JUAN MONTEZ RESTAURANT & Cantina — Authentic Mexican & American Favorites 🌟
+  </footer>
+</div>
+</body>
+</html>
